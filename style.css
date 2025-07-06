@@ -100,6 +100,9 @@ img {
 }
 
 .bg-dark {
+  --section-title-color: var(--clr-neutral-100);
+  --btn-bg-color: var(--clr-neutral-100);
+
   color: var(--clr-neutral-100);
   background: var(--clr-neutral-900);
 }
@@ -108,6 +111,13 @@ img {
   color: var(--clr-accent-400);
 }
 
+.fw-bold {
+  font-weight: var(--fw-700);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
 /* general styling */
 
 body {
@@ -141,8 +151,18 @@ a {
   font-size: 1.125rem;
   color: inherit;
   padding: 0.75em 1.5em;
-  background-color: var(--clr-accent-400);
+  background-color: var(--btn-bg-color, var(--clr-accent-400));
   color: var(--clr-neutral-900);
+}
+
+.section-title {
+  display: inline-block;
+  font-size: var(--fs-300);
+  color: var(--section-title-color, var(--clr-accent-400));
+  background-color: var(--clr-neutral-900);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0.25em 0.5em;
 }
 
 /* navigation */
