@@ -114,6 +114,7 @@ img {
 .bg-accent {
   --section-title-color: var(--clr-neutral-100);
   --btn-bg-color: var(--clr-neutral-100);
+  --btn-bg-hover-color: var(--clr-neutral-300);
 
   color: var(--clr-neutral-900);
   background-color: var(--clr-accent-400);
@@ -191,6 +192,12 @@ a {
   padding: 0.75em 1.5em;
   background-color: var(--btn-bg-color, var(--clr-accent-400));
   color: var(--clr-neutral-900);
+  transition: all 250ms ease-in;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--btn-bg-hover-color, var(--clr-accent-500));
 }
 
 .section-title {
