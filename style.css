@@ -84,15 +84,16 @@ img {
   .split {
     flex-direction: row;
     justify-content: space-between;
+    gap: var(--split-spacer, var(--spacer));
   }
 
   .split > * {
     flex-basis: 100%;
   }
 
-  .split > * + * {
+  /* .split > * + * {
     margin: 0 0 0 var(--spacer);
-  }
+  } */
 }
 
 .a-center {
@@ -146,6 +147,26 @@ img {
 
 .text-upcase {
   text-transform: uppercase;
+}
+
+.corner-square {
+  position: relative;
+}
+
+.corner-square::before {
+  content: "";
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  background: var(--clr-accent-400);
+  position: absolute;
+  z-index: -1;
+  top: -0.5rem;
+  left: -0.5rem;
+}
+
+.corner-square:nth-of-type(even)::before {
+  background: var(--clr-neutral-900);
 }
 
 /* general styling */
@@ -269,7 +290,7 @@ section {
   }
 }
 
-.join-now li {
+/* .join-now li {
   position: relative;
 }
 
@@ -283,12 +304,11 @@ section {
   z-index: -1;
   top: -0.5rem;
   left: -0.5rem;
-  /* transform: translate(-0.5rem, -0.5rem); */
 }
 
 .join-now li:nth-of-type(even)::before {
   background: var(--clr-neutral-900);
-}
+} */
 
 .cta {
   background-image: url(assets/cta-bg-1.jpg);
@@ -307,7 +327,7 @@ section {
 
 .testimonial {
   text-align: left;
-  position: relative;
+  /* position: relative; */
   padding: 2em 1.5em;
   background-color: var(--testimonial-bg-color, var(--clr-neutral-900));
   color: var(--testimonial-color, var(--clr-neutral-100));
@@ -315,13 +335,14 @@ section {
 
 .testimonial .name {
   margin-top: 1.5em;
+  font-weight: var(--fw-700);
 }
 
 .testimonial:nth-of-type(odd) .name {
   color: var(--clr-accent-400);
 }
 
-.testimonial::before {
+/* .testimonial::before {
   content: "";
   display: block;
   width: 3rem;
@@ -331,13 +352,12 @@ section {
   z-index: -1;
   top: -0.5rem;
   left: -0.5rem;
-  /* transform: translate(-0.5rem, -0.5rem); */
-}
+} */
 
 .testimonial:nth-of-type(even) {
   --testimonial-bg-color: var(--clr-accent-400);
   --testimonial-color: var(--clr-neutral-900);
-  --testimonial-card-corner-color: var(--clr-neutral-900);
+  /* --testimonial-card-corner-color: var(--clr-neutral-900); */
 }
 
 .cta2 {
